@@ -8,7 +8,7 @@ gulp.task('test', () => {
     return gulp.src('./test/**/*.ts', {base: '.'})
         .pipe(tsProject())
         .pipe(gulp.dest('.'))
-        .pipe(mocha())
+        .pipe(mocha({reporter: 'dot'}))
         .on('error', function (err) {
             console.log(err.stack);
         });
